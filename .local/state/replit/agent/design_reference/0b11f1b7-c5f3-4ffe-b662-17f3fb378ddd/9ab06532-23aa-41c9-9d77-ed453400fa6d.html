@@ -1,0 +1,716 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMSI - La Grande École des Sciences de l'Ingénieur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emsi-green': '#22C55E',
+                        'emsi-dark-green': '#16A34A',
+                        'emsi-light-green': '#DCFCE7'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-inter bg-white">
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="fixed top-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 text-sm">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-2 md:mb-0">
+                <p>En poursuivant votre navigation, vous acceptez l'utilisation des cookies destinés à des fins de mesures d'audience.</p>
+            </div>
+            <div class="flex space-x-2">
+                <button onclick="acceptCookies()" class="bg-emsi-green hover:bg-emsi-dark-green px-4 py-2 rounded text-white font-medium transition-colors">
+                    Accepter
+                </button>
+                <button onclick="closeCookieBanner()" class="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded text-white font-medium transition-colors">
+                    Refuser
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="bg-gray-900 text-white py-2 text-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-emsi-green transition-colors">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="hover:text-emsi-green transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="hover:text-emsi-green transition-colors">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="#" class="hover:text-emsi-green transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="hover:text-emsi-green transition-colors">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            <div class="hidden md:block">
+                <span>La Grande École des Sciences de l'Ingénieur</span>
+            </div>
+            <div>
+                <a href="#inscription" class="bg-emsi-green hover:bg-emsi-dark-green px-4 py-2 rounded text-white font-medium transition-colors">
+                    Je m'inscris
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="bg-emsi-green text-white font-bold text-2xl px-4 py-2 rounded">
+                        EMSI
+                    </div>
+                </div>
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#formations" class="text-gray-700 hover:text-emsi-green font-medium transition-colors">Nos formations</a>
+                    <a href="#recherche" class="text-gray-700 hover:text-emsi-green font-medium transition-colors">Recherche & innovation</a>
+                    <a href="#employabilite" class="text-gray-700 hover:text-emsi-green font-medium transition-colors">Centre de carrières</a>
+                    <a href="#campus" class="text-gray-700 hover:text-emsi-green font-medium transition-colors">Campus</a>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobileMenuBtn" class="text-gray-700 hover:text-emsi-green">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden bg-white border-t hidden">
+            <div class="container mx-auto px-4 py-4 space-y-4">
+                <a href="#formations" class="block text-gray-700 hover:text-emsi-green font-medium">Nos formations</a>
+                <a href="#recherche" class="block text-gray-700 hover:text-emsi-green font-medium">Recherche & innovation</a>
+                <a href="#employabilite" class="block text-gray-700 hover:text-emsi-green font-medium">Centre de carrières</a>
+                <a href="#campus" class="block text-gray-700 hover:text-emsi-green font-medium">Campus</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-emsi-dark-green to-emsi-green text-white">
+        <!-- Hero background image -->
+        <div class="absolute inset-0 opacity-20">
+            <!-- Modern university campus with students walking -->
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" alt="Campus universitaire moderne" class="w-full h-full object-cover"/>
+        </div>
+        <div class="relative container mx-auto px-4 py-24">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    Première école d'ingénieurs privée au Maroc
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                    Une formation d'excellence qui prépare les ingénieurs de demain aux défis technologiques et industriels.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#formations" class="bg-white text-emsi-green px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center">
+                        Nos formations
+                    </a>
+                    <a href="#recherche" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emsi-green transition-colors text-center">
+                        Recherche & innovation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Figures Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Nos chiffres clés</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-emsi-green mb-2" data-counter="39">0</div>
+                    <p class="text-gray-600 font-medium">Années d'expérience</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-emsi-green mb-2" data-counter="19">0</div>
+                    <p class="text-gray-600 font-medium">Campus</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-emsi-green mb-2" data-counter="20000">0</div>
+                    <p class="text-gray-600 font-medium">Diplômés</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-emsi-green mb-2" data-counter="240">0</div>
+                    <p class="text-gray-600 font-medium">Entreprises partenaires</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations Section -->
+    <section id="formations" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Nos formations</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Nous offrons à nos élèves ingénieurs une formation d'excellence, enrichie d'expériences concrètes qui les préparent à une carrière réussie.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Formation 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Engineering students working on computers -->
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Étudiants en ingénierie informatique" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Ingénierie Informatique & Réseaux</h3>
+                        <p class="text-gray-600 mb-4">Devenez un ingénieur spécialisé en technologies de l'information, en cybersécurité ou en intelligence artificielle.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 font-medium">Compétences clés :</p>
+                            <p class="text-sm text-gray-600">Développement digital, cybersécurité, intelligence artificielle.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                            En savoir plus
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formation 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Electrical engineering equipment and circuits -->
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Équipement d'ingénierie électrique" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Génie Électrique et Systèmes Intelligents</h3>
+                        <p class="text-gray-600 mb-4">Une formation solide en Génie Électrique et technologies modernes, incluant les réseaux intelligents.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 font-medium">Compétences clés :</p>
+                            <p class="text-sm text-gray-600">Électrotechnique, systèmes automatisés, smart grids, énergies renouvelables.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                            En savoir plus
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formation 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Industrial automation and robotics -->
+                    <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Automatisation industrielle et robotique" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Ingénierie Automatisme et Informatique Industrielle</h3>
+                        <p class="text-gray-600 mb-4">Maîtrisez les technologies de contrôle, de pilotage et de supervision pour façonner l'usine du futur.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 font-medium">Compétences clés :</p>
+                            <p class="text-sm text-gray-600">Contrôle-commande, réseaux industriels, systèmes automatisés.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                            En savoir plus
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formation 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Civil engineering construction site -->
+                    <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Chantier de génie civil" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Génie Civil, Bâtiments et Travaux Publics</h3>
+                        <p class="text-gray-600 mb-4">Construisez des infrastructures durables en tant qu'Ingénieur en Génie Civil spécialisé BTP.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 font-medium">Compétences clés :</p>
+                            <p class="text-sm text-gray-600">Conception structures, gestion chantiers, infrastructures, construction durable.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                            En savoir plus
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formation 5 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Industrial manufacturing and logistics -->
+                    <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Production industrielle et logistique" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Génie Industriel</h3>
+                        <p class="text-gray-600 mb-4">Une expertise technique et managériale pour piloter la performance industrielle et l'optimisation des processus.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 font-medium">Compétences clés :</p>
+                            <p class="text-sm text-gray-600">Gestion production, logistique, maintenance systèmes, management qualité.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                            En savoir plus
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formation 6 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Financial analysis and trading floor -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Analyse financière et trading" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Génie Financier</h3>
+                        <p class="text-gray-600 mb-4">Bâtissez votre carrière dans la finance avec une formation d'ingénieur spécialisée et innovante.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 font-medium">Compétences clés :</p>
+                            <p class="text-sm text-gray-600">Gestion risques, finance marchés, stratégie investissements, actuariat.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                            En savoir plus
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employabilité Section -->
+    <section id="employabilite" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Employabilité</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Les alumni de l'EMSI sont très recherchés par les entreprises tant au niveau national qu'international.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="bg-emsi-light-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-building text-emsi-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Centres de carrières</h3>
+                    <p class="text-gray-600 text-sm">6 centres dédiés à l'accompagnement des élèves ingénieurs.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="bg-emsi-light-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-emsi-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Nos recruteurs</h3>
+                    <p class="text-gray-600 text-sm">240 entreprises partenaires offrant stages et emplois.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="bg-emsi-light-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-emsi-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">21st century skills</h3>
+                    <p class="text-gray-600 text-sm">Certifications en soft skills et hard skills tout au long du parcours.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="bg-emsi-light-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-emsi-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Alumni</h3>
+                    <p class="text-gray-600 text-sm">Réseau actif de 20 000 diplômés pour mentorat et networking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="recherche" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Notre stratégie de recherche</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    À travers ses laboratoires de recherche, l'EMSI déploie un environnement propice au développement de la recherche scientifique académique et appliquée.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center group">
+                    <!-- Advanced laboratory equipment and research -->
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Équipement de laboratoire avancé" class="w-full h-64 object-cover rounded-xl mb-6 group-hover:scale-105 transition-transform duration-300"/>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Stratégie de recherche</h3>
+                    <p class="text-gray-600 mb-4">Développement de la recherche scientifique académique et appliquée.</p>
+                    <a href="#" class="inline-flex items-center text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                        En savoir plus
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="text-center group">
+                    <!-- University collaboration and partnership meeting -->
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Collaboration universitaire et partenariats" class="w-full h-64 object-cover rounded-xl mb-6 group-hover:scale-105 transition-transform duration-300"/>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Partenaires de recherche</h3>
+                    <p class="text-gray-600 mb-4">Collaborations stratégiques avec universités et entreprises internationales.</p>
+                    <a href="#" class="inline-flex items-center text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                        En savoir plus
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="text-center group">
+                    <!-- Awards ceremony and achievements -->
+                    <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Cérémonie de remise de prix et distinctions" class="w-full h-64 object-cover rounded-xl mb-6 group-hover:scale-105 transition-transform duration-300"/>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Prix & classements</h3>
+                    <p class="text-gray-600 mb-4">Reconnaissance nationale et internationale de nos travaux de recherche.</p>
+                    <a href="#" class="inline-flex items-center text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                        En savoir plus
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Section -->
+    <section id="campus" class="py-20 bg-emsi-green text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Nos 19 Campus</h2>
+                <p class="text-xl max-w-3xl mx-auto opacity-90">
+                    L'EMSI compte au total 19 sites dans le Royaume du Maroc. Chacun équipé de matériels didactiques sophistiqués pour les travaux pratiques et la recherche.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-4 text-center mb-8">
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <h3 class="font-bold text-lg">Casablanca</h3>
+                    <p class="text-sm opacity-80">Campus principal</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <h3 class="font-bold text-lg">Rabat</h3>
+                    <p class="text-sm opacity-80">4 sites</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <h3 class="font-bold text-lg">Marrakech</h3>
+                    <p class="text-sm opacity-80">3 sites</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <h3 class="font-bold text-lg">Tanger</h3>
+                    <p class="text-sm opacity-80">2 sites</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <h3 class="font-bold text-lg">Fès</h3>
+                    <p class="text-sm opacity-80">2 sites</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <!-- Modern university campus buildings exterior view -->
+                <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600" alt="Campus universitaire moderne avec bâtiments contemporains" class="w-full max-w-4xl mx-auto rounded-xl shadow-2xl mb-8"/>
+                <a href="#" class="inline-flex items-center bg-white text-emsi-green px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                    En savoir plus
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Notre Actualité</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez nos dernières nouvelles et événements. Restez informé des nouveautés et des moments forts de notre communauté.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Engineering students collaborating on projects -->
+                    <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300" alt="Étudiants ingénieurs collaborant sur des projets" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">Le groupe Honoris partenaire stratégique avec Jobliment Recruiting</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nouveau partenariat pour renforcer l'employabilité de nos diplômés...</p>
+                        <a href="#" class="text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                            Lire la suite
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Space technology and satellite communications -->
+                    <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300" alt="Technologie spatiale et communications satellite" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">L'EMSI en direct avec l'astronaute américaine de la NASA</h3>
+                        <p class="text-gray-600 text-sm mb-4">Événement exceptionnel de connexion spatiale avec nos étudiants...</p>
+                        <a href="#" class="text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                            Lire la suite
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- International engineering conference and networking -->
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300" alt="Conférence internationale d'ingénierie et networking" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">EMSI: Première institution au Maroc à rejoindre le réseau CDIO</h3>
+                        <p class="text-gray-600 text-sm mb-4">Intégration dans le prestigieux réseau international d'éducation en ingénierie...</p>
+                        <a href="#" class="text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                            Lire la suite
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Graduation ceremony with engineering students -->
+                    <img src="https://pixabay.com/get/ge3e22500dc8f39e1a577d5f5c4d9b73c1c7bc1302ecdab89238d4525c1679ddd67cb4e5f017413ffbcd068516743c14692e0683e48c709a5a0c42240e00aa36f_1280.jpg" alt="Cérémonie de remise de diplômes avec étudiants ingénieurs" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">Grâce à l'EMSI, le Maroc en verve avec trois médailles</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nos étudiants brillent dans les compétitions internationales d'ingénierie...</p>
+                        <a href="#" class="text-emsi-green font-semibold hover:text-emsi-dark-green transition-colors">
+                            Lire la suite
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="bg-emsi-green text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emsi-dark-green transition-colors">
+                    Toutes les actualités
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inscription Section -->
+    <section id="inscription" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6">Rejoignez l'EMSI</h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Commencez votre parcours vers l'excellence en ingénierie. Inscrivez-vous dès maintenant pour la prochaine rentrée.
+                </p>
+                
+                <div class="bg-white bg-opacity-10 rounded-xl p-8 max-w-2xl mx-auto" data-mock="true">
+                    <form class="space-y-6">
+                        <!-- TODO: Implement form submission logic -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Prénom *</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-gray-300 border-opacity-30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-emsi-green" placeholder="Votre prénom" data-mock="true"/>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Nom *</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-gray-300 border-opacity-30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-emsi-green" placeholder="Votre nom" data-mock="true"/>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email *</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-gray-300 border-opacity-30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-emsi-green" placeholder="votre.email@exemple.com" data-mock="true"/>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Téléphone *</label>
+                            <input type="tel" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-gray-300 border-opacity-30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-emsi-green" placeholder="+212 6 00 00 00 00" data-mock="true"/>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Filière d'intérêt</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-gray-300 border-opacity-30 text-white focus:outline-none focus:ring-2 focus:ring-emsi-green" data-mock="true">
+                                <option value="">Choisissez une filière</option>
+                                <option value="informatique">Ingénierie Informatique & Réseaux</option>
+                                <option value="electrique">Génie Électrique et Systèmes Intelligents</option>
+                                <option value="automatisme">Ingénierie Automatisme et Informatique Industrielle</option>
+                                <option value="civil">Génie Civil, Bâtiments et Travaux Publics</option>
+                                <option value="industriel">Génie Industriel</option>
+                                <option value="financier">Génie Financier</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-emsi-green hover:bg-emsi-dark-green text-white font-bold py-4 px-8 rounded-lg transition-colors" data-event="click:handleFormSubmit" data-implementation="Should validate form and submit to enrollment system">
+                            Envoyer ma candidature
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- About EMSI -->
+                <div>
+                    <div class="bg-emsi-green text-white font-bold text-2xl px-4 py-2 rounded mb-4 inline-block">
+                        EMSI
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        L'École Marocaine des Sciences de l'Ingénieur, créée il y a plus de 39 ans, est la plus grande école d'ingénieurs privée au Maroc.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- EMSI Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">EMSI</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Présentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Réseau Honoris</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Nos Actualités</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Campus</a></li>
+                    </ul>
+                </div>
+
+                <!-- Employabilité -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Employabilité</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Recruteurs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Centre de carrière</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">21st century skills</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Alumni</a></li>
+                    </ul>
+                </div>
+
+                <!-- Formations -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Formations</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Ingénierie Informatique et Réseaux</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Génie Électrique et Systèmes Intelligents</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Ingénierie Automatisme</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Génie Civil, BTP</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Génie Industriel</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emsi-green transition-colors">Génie Financier</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 EMSI - École Marocaine des Sciences de l'Ingénieur. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Cookie banner functionality
+            function acceptCookies() {
+                document.getElementById('cookieBanner').style.display = 'none';
+                // TODO: Implement cookie acceptance logic
+            }
+            
+            function closeCookieBanner() {
+                document.getElementById('cookieBanner').style.display = 'none';
+                // TODO: Implement cookie refusal logic
+            }
+            
+            // Make functions globally available
+            window.acceptCookies = acceptCookies;
+            window.closeCookieBanner = closeCookieBanner;
+
+            // Counter animation
+            function animateCounters() {
+                const counters = document.querySelectorAll('[data-counter]');
+                
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-counter'));
+                    const increment = target / 100;
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += increment;
+                            counter.textContent = Math.ceil(current).toLocaleString();
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target.toLocaleString();
+                        }
+                    };
+                    
+                    updateCounter();
+                });
+            }
+
+            // Intersection Observer for counter animation
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const counterSection = document.querySelector('[data-counter]')?.closest('section');
+            if (counterSection) {
+                observer.observe(counterSection);
+            }
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80; // Account for sticky nav
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Form submission handling (mocked)
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement actual form submission to enrollment system
+                    alert('Formulaire soumis avec succès ! (Version de démonstration)');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
